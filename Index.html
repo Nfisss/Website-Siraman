@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siraman</title>
+    <link rel="stylesheet" href="Style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Halaman Pembuka -->
+    <section class="hero-section" id="home">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="title-container">
+                <h2 class="subtitle">SIRAMAN</h2>
+            </div>
+            
+            <div class="phone-mockup">
+                <div class="phone">
+                    <div class="screen">
+                        <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=400" alt="Wedding">
+                    </div>
+                </div>
+            </div>
+
+            <div class="couple-names">
+                <h3>A & F</h3>
+                <p class="wedding-date">30 . 03 . 2026</p>
+            </div>
+
+            <button class="cta-button" onclick="scrollToSection('invitation')">
+                Website Invitation
+            </button>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Halaman Undangan -->
+    <section class="invitation-section" id="invitation">
+        <div class="container">
+            <div class="invitation-card">
+                <div class="gold-accent"></div>
+                <h2 class="section-title">Undangan Siraman</h2>
+                <div class="divider"></div>
+                
+                <p class="invitation-text">
+                    Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang 
+                    Bapak/Ibu/Saudara/i untuk menghadiri acara Siraman dalam rangka 
+                    pernikahan putra-putri kami:
+                </p>
+
+                <div class="couple-info">
+                    <div class="bride">
+                        <div class="portrait-frame">
+                            <img src="https://events.rumah123.com/wp-content/uploads/sites/41/2023/09/12160753/gambar-foto-profil-whatsapp-kosong-1024x1024.jpg" alt="Bride">
+                        </div>
+                        <h3>Kiara Andini</h3>
+                        <p>Putri dari Bapak Ahmad & Ibu Siti</p>
+                    </div>
+
+                    <div class="ampersand">&</div>
+
+                    <div class="groom">
+                        <div class="portrait-frame">
+                            <img src="https://events.rumah123.com/wp-content/uploads/sites/41/2023/09/12160753/gambar-foto-profil-whatsapp-kosong-1024x1024.jpg" alt="Groom">
+                        </div>
+                        <h3>Udal Adul</h3>
+                        <p>Putra dari Bapak Budi & Ibu Ratna</p>
+                    </div>
+                </div>
+
+                <button class="next-button" onclick="scrollToSection('details')">
+                    Lihat Detail Acara
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Halaman Detail Acara -->
+    <section class="details-section" id="details">
+        <div class="container">
+            <h2 class="section-title">Detail Acara</h2>
+            <div class="divider"></div>
+
+            <div class="event-details">
+                <div class="event-card">
+                    <div class="event-icon">🌊</div>
+                    <h3>Acara Siraman</h3>
+                    <div class="event-info">
+                        <p class="event-date">Minggu, 21 Juni 2026</p>
+                        <p class="event-time">09.00 WIB - Selesai</p>
+                        <p class="event-location">
+                            Kediaman Mempelai Wanita<br>
+                            Jl. Mawar No. 123, Bandung<br>
+                            Jawa Barat
+                        </p>
+                    </div>
+                    <button class="map-button">Lihat Lokasi</button>
+                </div>
+
+                <div class="event-card highlight">
+                    <div class="event-icon">💒</div>
+                    <h3>Akad Nikah</h3>
+                    <div class="event-info">
+                        <p class="event-date">Selasa, 23 Juni 2026</p>
+                        <p class="event-time">08.00 WIB - Selesai</p>
+                        <p class="event-location">
+                            Masjid Al-Hidayah<br>
+                            Jl. Sudirman No. 45, Bandung<br>
+                            Jawa Barat
+                        </p>
+                    </div>
+                    <button class="map-button">Lihat Lokasi</button>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-icon">🎊</div>
+                    <h3>Resepsi Pernikahan</h3>
+                    <div class="event-info">
+                        <p class="event-date">Selasa, 23 Juni 2026</p>
+                        <p class="event-time">11.00 - 14.00 WIB</p>
+                        <p class="event-location">
+                            Grand Ballroom Hotel Santika<br>
+                            Jl. Soekarno-Hatta No. 789<br>
+                            Bandung, Jawa Barat
+                        </p>
+                    </div>
+                    <button class="map-button">Lihat Lokasi</button>
+                </div>
+            </div>
+
+            <div class="countdown-container">
+                <h3>Hitung Mundur Acara</h3>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="days">00</span>
+                        <span class="countdown-label">Hari</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="hours">00</span>
+                        <span class="countdown-label">Jam</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="minutes">00</span>
+                        <span class="countdown-label">Menit</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="seconds">00</span>
+                        <span class="countdown-label">Detik</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Halaman Galeri -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Galeri Foto</h2>
+            <div class="divider"></div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600" alt="Photo 1">
+                    <div class="gallery-overlay">
+                        <span>Prewedding</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600" alt="Photo 2">
+                    <div class="gallery-overlay">
+                        <span>Our Story</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=600" alt="Photo 3">
+                    <div class="gallery-overlay">
+                        <span>Engagement</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=600" alt="Photo 4">
+                    <div class="gallery-overlay">
+                        <span>Together</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Halaman RSVP -->
+    <section class="rsvp-section" id="rsvp">
+        <div class="container">
+            <h2 class="section-title">Konfirmasi Kehadiran</h2>
+            <div class="divider"></div>
+
+            <div class="rsvp-card">
+                <p class="rsvp-text">
+                    Merupakan suatu kehormatan bagi kami apabila Bapak/Ibu/Saudara/i 
+                    berkenan hadir untuk memberikan doa restu.
+                </p>
+
+                <form class="rsvp-form" id="rsvpForm">
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap</label>3
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="attendance">Konfirmasi Kehadiran</label>
+                        <select id="attendance" name="attendance" required>
+                            <option value="">Pilih...</option>
+                            <option value="hadir">Hadir</option>
+                            <option value="tidak-hadir">Tidak Hadir</option>
+                            <option value="masih-ragu">Masih Ragu</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guests">Jumlah Tamu</label>
+                        <input type="number" id="guests" name="guests" min="1" max="5" value="1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Pesan & Doa</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tulis pesan dan doa untuk pengantin..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">Kirim Konfirmasi</button>
+                </form>
+            </div>
+
+            <div class="wishes-container">
+                <h3>Ucapan & Doa</h3>
+                <div class="wishes-list" id="wishesList">
+                    <div class="wish-item">
+                        <h4>mantis hideung</h4>
+                        <p>"Selamat menempuh hidup baru! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah."</p>
+                        <span class="wish-date">2 hari yang lalu</span>
+                    </div>
+                    <div class="wish-item">
+                        <h4>ero racing</h4>
+                        <p>"Barakallahu lakuma wa baraka alaikuma wa jamaa bainakuma fi khair."</p>
+                        <span class="wish-date">3 hari yang lalu</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h3>A & F </h3>
+                <p>Terima kasih atas doa dan kehadiran Anda</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon">📷</a>
+                    <a href="#" class="social-icon">💬</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Wedding Invitation | Made on Nadil Ulum Annafis</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

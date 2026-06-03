@@ -1,0 +1,832 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #0a0a0a;
+    --dark-gray: #1a1a1a;
+    --gold: #d4af37;
+    --light-gold: #f4e4bc;
+    --white: #ffffff;
+    --off-white: #f5f5f5;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+}
+
+.section-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.divider {
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin: 0 auto 3rem;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(212,175,55,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+}
+
+.title-container {
+    margin-bottom: 2rem;
+    animation: fadeInDown 1s ease-out;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    color: var(--light-gold);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 4rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--light-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 5px;
+}
+
+/* Phone Mockup */
+.phone-mockup {
+    margin: 3rem auto;
+    perspective: 1000px;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.phone {
+    width: 300px;
+    height: 600px;
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    border-radius: 40px;
+    padding: 15px;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        0 0 0 2px var(--gold),
+        inset 0 0 20px rgba(212, 175, 55, 0.1);
+    margin: 0 auto;
+    position: relative;
+    transition: transform 0.5s ease;
+}
+
+.phone:hover {
+    transform: rotateY(10deg) rotateX(5deg);
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    background: var(--black);
+}
+
+.screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Couple Names */
+.couple-names {
+    margin: 2rem 0;
+    animation: fadeIn 1s ease-out 0.6s both;
+}
+
+.couple-names h3 {
+    font-size: 3rem;
+    color: var(--gold);
+    letter-spacing: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.wedding-date {
+    font-size: 1.5rem;
+    letter-spacing: 10px;
+    color: var(--light-gold);
+}
+
+/* CTA Button */
+.cta-button {
+    background: linear-gradient(135deg, var(--gold) 0%, #b8941e 100%);
+    color: var(--black);
+    border: none;
+    padding: 18px 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-top: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+    animation: fadeIn 1s ease-out 0.9s both;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--gold);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    animation: bounce 2s infinite;
+}
+
+.scroll-line {
+    width: 2px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    margin: 10px auto 0;
+}
+
+/* Invitation Section */
+.invitation-section {
+    min-height: 100vh;
+    padding: 100px 20px;
+    background: var(--dark-gray);
+    position: relative;
+}
+
+.invitation-card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    padding: 60px 40px;
+    border-radius: 20px;
+    border: 2px solid var(--gold);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    position: relative;
+}
+
+.gold-accent {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--light-gold) 100%);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.invitation-text {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--off-white);
+    margin: 2rem 0 3rem;
+}
+
+/* Couple Info */
+.couple-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    margin: 4rem 0;
+    flex-wrap: wrap;
+}
+
+.bride, .groom {
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+}
+
+.portrait-frame {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    border: 3px solid var(--gold);
+    padding: 5px;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--light-gold) 100%);
+    overflow: hidden;
+}
+
+.portrait-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.couple-info h3 {
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+}
+
+.couple-info p {
+    color: var(--off-white);
+    font-size: 0.95rem;
+}
+
+.ampersand {
+    font-size: 4rem;
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+}
+
+.next-button {
+    background: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    padding: 15px 40px;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 50px;
+    display: block;
+    margin: 3rem auto 0;
+    transition: all 0.3s ease;
+}
+
+.next-button:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
+/* Details Section */
+.details-section {
+    min-height: 100vh;
+    padding: 100px 20px;
+    background: var(--black);
+}
+
+.event-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.event-card {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    padding: 40px 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold);
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
+}
+
+.event-card.highlight {
+    border: 2px solid var(--gold);
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+}
+
+.event-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.event-card h3 {
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+}
+
+.event-info {
+    margin: 2rem 0;
+}
+
+.event-date {
+    font-size: 1.2rem;
+    color: var(--light-gold);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.event-time {
+    font-size: 1.1rem;
+    color: var(--off-white);
+    margin-bottom: 1rem;
+}
+
+.event-location {
+    color: var(--off-white);
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.map-button {
+    background: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    padding: 12px 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-top: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.map-button:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
+/* Countdown */
+.countdown-container {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.countdown-container h3 {
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 2rem;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+}
+
+.countdown-value {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    display: block;
+    line-height: 1;
+}
+
+.countdown-label {
+    font-size: 0.9rem;
+    color: var(--off-white);
+    margin-top: 0.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Gallery Section */
+.gallery-section {
+    min-height: 100vh;
+    padding: 100px 20px;
+    background: var(--dark-gray);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    aspect-ratio: 1;
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+    border-color: var(--gold);
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay span {
+    color: var(--gold);
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+/* RSVP Section */
+.rsvp-section {
+    min-height: 100vh;
+    padding: 100px 20px;
+    background: var(--black);
+}
+
+.rsvp-card {
+    max-width: 600px;
+    margin: 0 auto 4rem;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    padding: 50px 40px;
+    border-radius: 20px;
+    border: 2px solid var(--gold);
+}
+
+.rsvp-text {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--off-white);
+    margin-bottom: 3rem;
+}
+
+.rsvp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    color: var(--gold);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--white);
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.submit-button {
+    background: linear-gradient(135deg, var(--gold) 0%, #b8941e 100%);
+    color: var(--black);
+    border: none;
+    padding: 15px 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+}
+
+/* Wishes Container */
+.wishes-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.wishes-container h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 2rem;
+}
+
+.wishes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.wish-item {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    padding: 25px 30px;
+    border-radius: 15px;
+    border-left: 4px solid var(--gold);
+}
+
+.wish-item h4 {
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.wish-item p {
+    color: var(--off-white);
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+}
+
+.wish-date {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+}
+
+/* Footer */
+.footer {
+    background: var(--dark-gray);
+    padding: 50px 20px 30px;
+    text-align: center;
+}
+
+.footer-content h3 {
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+.footer-content p {
+    color: var(--off-white);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.social-icon {
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
+.footer-bottom {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .main-title {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 2.5rem;
+    }
+
+    .couple-names h3 {
+        font-size: 2rem;
+    }
+
+    .wedding-date {
+        font-size: 1.2rem;
+    }
+
+    .phone {
+        width: 250px;
+        height: 500px;
+    }
+
+    .couple-info {
+        gap: 2rem;
+    }
+
+    .ampersand {
+        font-size: 3rem;
+    }
+
+    .portrait-frame {
+        width: 150px;
+        height: 150px;
+    }
+
+    .invitation-card,
+    .rsvp-card {
+        padding: 40px 25px;
+    }
+
+    .countdown {
+        gap: 1rem;
+    }
+
+    .countdown-value {
+        font-size: 2.5rem;
+    }
+
+    .event-details {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .main-title {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 2rem;
+    }
+
+    .couple-names h3 {
+        font-size: 1.5rem;
+        letter-spacing: 4px;
+    }
+
+    .wedding-date {
+        font-size: 1rem;
+        letter-spacing: 5px;
+    }
+
+    .cta-button {
+        padding: 15px 35px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 0;
+}
